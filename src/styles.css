@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* dog-panel module */
+.ad {
+    padding: 2em; 
+    display: block; 
+    top: 0px; 
+    left: 3em; 
+    position: absolute; 
+    background-color: hsla(0, 100%, 90%, .90);
+}

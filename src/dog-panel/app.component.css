@@ -1,0 +1,8 @@
+/* component specific stylesheet */
+.c-imagePlacement1 {margin: 1em 1em 3em 0; max-height: 5em}
+.c-imagePlacement2 {margin: .5em .5em 1.5em 0; max-height: 2.5em}
+
+.tiny.button {
+    margin:0;     
+    padding: .6em 1em;
+}

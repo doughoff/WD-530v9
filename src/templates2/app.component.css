@@ -1,0 +1,7 @@
+/* component specific stylesheet */
+img {
+  max-height: 150px;
+}
+figcaption {
+    font-size: .7em;
+}

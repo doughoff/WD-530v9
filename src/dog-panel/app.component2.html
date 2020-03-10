@@ -1,0 +1,34 @@
+<h1>Dog Panel v2</h1>
+<div class="row">
+  <div
+    *ngFor="let dog of mockDogs; let i = index;"
+    class="success callout small-4 columns"
+  >
+    <span class="secondary label"
+      ><span id="dogIndex">{{i+1}}</span> of {{mockDogs.length}}</span
+    >
+    <span *ngIf="dog.isSenior" class="warning label">Senior</span>
+    <span *ngIf="dog.balance > 200" class="alert label"><i class="fas fa-dollar-sign"></i></span>
+
+    <span [ngSwitch]="dog.examType">
+      <span *ngSwitchCase="'checkup'" class="label"><i class="fas fa-check"></i></span>
+      <span *ngSwitchCase="'routine'"class="label"><i class="fas fa-stethoscope"></i></span>
+      <span *ngSwitchCase="'major'" class="label">Major</span>
+      <span *ngSwitchCase="'complete'"class="label">Complete</span>
+      <span *ngSwitchDefault> ? </span>
+    </span>
+
+    <img
+      src="{{dog.imageUrl}}"
+      title="{{dog.name}}"
+      alt="{{dog.name}}"
+      class="float-left c-imagePlacement1"
+    />
+    <h3>{{dog.name | curlyQuotes }}</h3>
+    <p>
+      {{dog.age}} year old {{dog.gender}} {{dog.breed || 'unknown breed'}}
+      last in the office {{dog.lastOfficeVisit | date:'shortDate' || 'never'}}
+      <span *ngIf = "dog.balance > 0"><b>Balance</b>: {{dog.balance | currency:'USD':'symbol':'1.2-2' }}</span>
+    </p>
+  </div>
+</div>
