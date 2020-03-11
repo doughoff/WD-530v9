@@ -12,6 +12,6 @@ let update = { sideOrder: `onion rings` };
 let order2 = { ...order1, ...update };
 console.log(order2);
 
-// similar to:
+// similar to the older version:
 let order3 = Object.assign({}, order1, update);
 console.log(order3);

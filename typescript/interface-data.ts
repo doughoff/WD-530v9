@@ -2,12 +2,13 @@ interface Order {
   entree: string;
   drink?: string;
   sideOrder?: string;
-  total: number;
+  total: number|string;
 }
 function putOrderIn(anOrder: Order) {
   console.log(anOrder);
 }
-putOrderIn({ entree: "hamburger", total: 4.95 });
+
+putOrderIn({ entree: "hamburger", total: '4.95' });
 putOrderIn({ entree: "cheeseburger", drink: "Pepsi", total: 6.95 });
 putOrderIn({
   entree: "cheeseburger",

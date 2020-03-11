@@ -16,5 +16,5 @@ let get3 = () => {
 };
 // arrow function assigned to variable, shortest
 let get4 = () => 1;
-let get5 = x => 1;
-let get6 = (x, y) => 1;
+let get5 = (x: any) => 1;
+let get6 = (x: any, y: any) => 1;
