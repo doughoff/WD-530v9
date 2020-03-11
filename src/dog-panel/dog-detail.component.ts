@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter  } from '@angular/core';
 import {Dog}                from './model/dog';
 
 @Component({
@@ -12,7 +12,8 @@ import {Dog}                from './model/dog';
 })
 export class DogDetail {
     @Input('dogIn') _dog: Dog;
-
+    @Output() messageFromDetail: EventEmitter<any> = new EventEmitter();
+  
     get dog() { return this._dog; }
     set dog(dogIn: Dog) {
         console.info('Updating from', this.dog);
@@ -21,6 +22,8 @@ export class DogDetail {
     }
     public payBill(event: MouseEvent) {
         console.info('PayBill received event', event);
+        let paidAmount = this.dog.balance;
+        this.messageFromDetail.emit(['Paid bill', this.dog, paidAmount]);
         this.dog.balance = 0;
         console.info('Paid bill for', this.dog);
     }

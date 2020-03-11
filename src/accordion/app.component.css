@@ -1,0 +1,4 @@
+/* component specific stylesheet */
+section p.hide {
+    display: none;
+}	

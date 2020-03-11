@@ -1,12 +1,15 @@
 <h1>Dog Panel v4</h1>
+<div id='status' [ngClass]="{callout: panelStatus, alert : panelStatus}">
+  {{panelStatus}}
+</div>
 <div class="row">
   <div
     *ngFor="let dog of mockDogs; let i = index;"
     class="success callout small-4 columns"
   >
     <span class="secondary label"
-      ><span id="dogIndex">{{i+1}}</span> of {{mockDogs.length}}dogs</span
+      ><span id="dogIndex">{{i+1}}</span> of {{mockDogs.length}} dogs</span
     >
-    <dog-detail [dogIn]='dog'></dog-detail>
+    <dog-detail [dogIn]='dog' (messageFromDetail)='onMessageFromDetail($event)'></dog-detail>
     </div>
 </div>
