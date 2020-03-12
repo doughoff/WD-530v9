@@ -17,7 +17,7 @@ import {MockDogs}       from './model/dog-data';
 `
 })
 export class DogName {
-    @Input( ) dogNameIn: string;
+    @Input( ) dogNameIn: Dog;
 }
 //-------------------------------------------  optional child component
 @Component({
