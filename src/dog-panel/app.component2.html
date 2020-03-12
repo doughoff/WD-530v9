@@ -1,12 +1,8 @@
 <h1>Dog Panel v2</h1>
 <div class="row">
-  <div
-    *ngFor="let dog of mockDogs; let i = index;"
-    class="success callout small-4 columns"
-  >
-    <span class="secondary label"
-      ><span id="dogIndex">{{i+1}}</span> of {{mockDogs.length}}</span
-    >
+  <div *ngFor="let dog of mockDogs; let i = index;" class="success callout small-4 columns">
+    <span class="secondary label">
+    <span id="dogIndex">{{i+1}}</span> of {{mockDogs.length}}</span>
     <span *ngIf="dog.isSenior" class="warning label">Senior</span>
     <span *ngIf="dog.balance > 200" class="alert label"><i class="fas fa-dollar-sign"></i></span>
 

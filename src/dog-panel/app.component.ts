@@ -5,11 +5,12 @@ import { MockDogs } from "./model/dog-data";
 @Component({
   selector: "app-root",
   styleUrls: ["app.component.css"],
-  templateUrl: `app.component4.html`
+  templateUrl: `app.component.html`
 })
 export class AppComponent {
   mockDogs: Dog[] = MockDogs.SIX;
   panelStatus: string;
+  dog: Dog = new Dog(456.00,'Test dog', 1, 'Pug',true,new Date() );
 
   onMessageFromDetail(event: any[]) {
     var message: string = event[0];
