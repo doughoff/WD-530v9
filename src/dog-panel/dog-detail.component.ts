@@ -21,7 +21,16 @@ export class DogDetail {
         console.info('Updated to', dogIn);
     }
     public payBill(event: MouseEvent) {
-        console.info('PayBill received event', event);
+        console.info('payBill received event:', event);
+        // event.target is typed as EventTarget, an interface for Element
+        if (event.target instanceof Element) {
+            // parentElement can't be accessed unless it's cast to an Element
+            let eventAncestor = (<Element>event.target.parentElement.parentElement);
+            console.info('eventParent\'s parent:', eventAncestor);     
+            let dogIndex: string = eventAncestor.querySelector('#dogIndex').textContent;
+            console.info('scraped Dog index = ', dogIndex); 
+        }
+        
         let paidAmount = this.dog.balance;
         this.messageFromDetail.emit(['Paid bill', this.dog, paidAmount]);
         this.dog.balance = 0;

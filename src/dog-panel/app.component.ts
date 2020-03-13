@@ -5,7 +5,7 @@ import { MockDogs } from "./model/dog-data";
 @Component({
   selector: "app-root",
   styleUrls: ["app.component.css"],
-  templateUrl: `app.component.html`
+  templateUrl: `app.component4.html`
 })
 export class AppComponent {
   mockDogs: Dog[] = MockDogs.SIX;
