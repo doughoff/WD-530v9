@@ -92,18 +92,26 @@
           <input
             id="city"
             type="text"
-            formControlName="addressCity" grumpy-city
+            formControlName="addressCity"
+            grumpy-city
             #addressCity
           />
         </div>
 
         <div class="large-2 columns">
-          <label for="state">State:          
-            <span class="label alert" [class.hide]="whenValidStateFor.addressState">{{errorMessages.addressState }}</span>
+          <label for="state"
+            >State:
+            <span
+              class="label alert"
+              [class.hide]="whenValidStateFor.addressState"
+              >{{errorMessages.addressState }}</span
+            >
           </label>
-          <select id='state' formControlName='addressState'>
-            <option *ngFor="let state of states" [value]="state.abbreviation"> {{state.name}}</option>
-        </select>
+          <select id="state" formControlName="addressState">
+            <option *ngFor="let state of states" [value]="state.abbreviation">
+              {{state.name}}</option
+            >
+          </select>
         </div>
 
         <div class="large-2 columns">
